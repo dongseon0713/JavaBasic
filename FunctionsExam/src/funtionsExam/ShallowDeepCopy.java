@@ -55,7 +55,21 @@ public class ShallowDeepCopy {
 		System.out.println("c2 = " + c2);
 		System.out.println("c3 = " + c3);
 		
+		c1.p.x = 9;
+		c1.p.y = 9;
 		
+		System.out.println("======= c1 변경 후 =======");
+		System.out.println("c1 = " + c1);
+		System.out.println("c2 = " + c2);
+		System.out.println("c3 = " + c3);
+		
+		//shallowCopy()의 내용을 보면 단순히 원본 객체가 가지고 있는 값만 그대로 복사한다.
+		
+		//deepCopy() shallowCopy()에 두줄을 추가하여
+		//Circle c = (Circle)obj;
+		//c.p = new Point(this.p.x, this.p.y);
+		//복제된 객체가 새로운 Point 객체를 참조하도록 한다.
+		//즉 원본이 참조하고 있는 객체까지 복사한 것이다.
 
 	}
 

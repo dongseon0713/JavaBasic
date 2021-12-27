@@ -1,34 +1,34 @@
 package funtionsExam;
 
-class Point implements Cloneable{	// clone()을 사용하려면 먼저 Cloneable 인터페이스를 구현해야한다.
-	int x, y ;
-	
-	Point(int x, int y){
-		this.x = x;
-		this.y = y;
-	}
-	@Override
-	public String toString() {
-		return "x = " + x + ", y = " + y;
-		}
-	public Object clone() {	// clone()을 사용하려면 먼저 Cloneable 인터페이스를 구현해야한다.
-		Object obj = null;
-		try {//	clone()은 반드시 예외 처리를 한다.
-			obj = super.clone();
-		} catch(CloneNotSupportedException e) {}
-		return obj;
-		}
-	}
-
-public class CloneExam {
-
-	public static void main(String[] args) {
-		
-		Point ori = new Point(3,5);
-		Point copy = (Point)ori.clone();
-		
-		System.out.println(ori);
-		System.out.println(copy);
+//class Point implements Cloneable{	// clone()을 사용하려면 먼저 Cloneable 인터페이스를 구현해야한다.
+//	int x, y ;
+//	
+//	Point(int x, int y){
+//		this.x = x;
+//		this.y = y;
+//	}
+//	@Override
+//	public String toString() {
+//		return "x = " + x + ", y = " + y;
+//		}
+//	public Object clone() {	// clone()을 사용하려면 먼저 Cloneable 인터페이스를 구현해야한다.
+//		Object obj = null;
+//		try {//	clone()은 반드시 예외 처리를 한다.
+//			obj = super.clone();
+//		} catch(CloneNotSupportedException e) {}
+//		return obj;
+//		}
+//	}
+//
+//public class CloneExam {
+//
+//	public static void main(String[] args) {
+//		
+//		Point ori = new Point(3,5);
+//		Point copy = (Point)ori.clone();
+//		
+//		System.out.println(ori);
+//		System.out.println(copy);
 		/*
 		 * clone() 메서드는 자신을 복제하여 새로운 객체를 생성하는 일을 한다.
 		 * 어떤 객체에 대한 작업을 할 때 원래의 객체는 보존하고 clone을 이용해서 새롭지만 동일한

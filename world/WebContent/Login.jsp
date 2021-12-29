@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%--
+<%--	JSP의 스트립팅 요소 5가지
 <%  .... %> 스크립틀릿 scriptlet 일반 자바 코드 삽입
 <%@ .... %> 지시어 directive
 <%= .... %> 표현식 expression

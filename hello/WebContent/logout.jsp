@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-a.jsp 입니다.
 <%
-	response.sendRedirect("b.jsp");
+	session.invalidate();
+	out.print("로그 아웃 하였습니다.");
 %>
 </body>
 </html>

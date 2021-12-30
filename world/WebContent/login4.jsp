@@ -1,3 +1,4 @@
+<%@page import="dao.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,9 +12,10 @@
 	String uid = request.getParameter("id");
 	String ups = request.getParameter("ps");
 	
-	String dbps = "0000";
+	UserDAO dao = new UserDAO();
+	int count = dao.login(uid,ups);
 	
-	if(ups.equals(dbps)){
+	if(ups.equals(count)){
 		session.setAttribute("id", uid);
 		out.print("로그인 성공");
 		response.sendRedirect("main.jsp");

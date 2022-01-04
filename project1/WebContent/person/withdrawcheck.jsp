@@ -1,4 +1,4 @@
-<%@page import="dao.MemberDAO"%>
+<%@page import="dao.PersonDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -6,10 +6,10 @@
 	String ups = request.getParameter("ps");
  	String sid = (String) session.getAttribute("id");
 
-	MemberDAO dao = new MemberDAO();
+	PersonDAO dao = new PersonDAO();
 	
 	if(dao.exist(uid) == false) {
-		response.sendRedirect("withdraw.jsp");
+		response.sendRedirect("/withdraw.jsp");
 	}
 	
 	if(uid.equals(sid)){
@@ -22,7 +22,3 @@
 	}
 
 %>
-    
-    
-    
-    

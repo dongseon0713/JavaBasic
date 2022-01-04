@@ -1,27 +1,26 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="util.ConnectionPool"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ page import="util.ConnectionPool"%>
-<%@ page import="java.sql.*"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이 메모</title>
+<title>방명록 프로그램</title>
 </head>
 <body>
-
-	<%@ include file="_header.jsp"%>
-
+<%@ include file = "_header.jsp" %>
 	<%
 		String uid = (String) session.getAttribute("id");
 
 	if (uid == null) {
-		response.sendRedirect("/member/login.jsp");
+		response.sendRedirect("/person/login.jsp");
 	}
 
 	session.setAttribute("id", uid);
 	%>
-
 	<div class="container">
 		<form action="/memo/memocheck.jsp">
 			<div class="form-floating">
@@ -37,20 +36,17 @@
 			<%
 			Connection conn = ConnectionPool.get();
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT * FROM memo ORDER BY no DESC");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM tbvisit ORDER BY no DESC");
 
 			while (rs.next()) {
 			%>
 			<tr><td colspan=2><hr></td></tr>
-			<tr><td><%=rs.getString("no")%></td>
-				<td><small><%=rs.getString("ts")%></small></td></tr>
-			<tr><td colspan=2><%=rs.getString("memo")%></td></tr>
+			<tr><td><%=rs.getString("no")%>  <%=rs.getString("memo")%></td>
 			<%
 				}
 			%>
 		</table>
 	</div>
-	<%@ include file="_footer.jsp"%>
-
+<%@ include file = "_footer.jsp" %>
 </body>
 </html>

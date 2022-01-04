@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원탈퇴</title>
+<title>Insert title here</title>
 </head>
 <body class="text-center">
   <%@ include file="/_header.jsp" %>
@@ -23,16 +24,11 @@
       <input type="password" name = "ps" class="form-control" id="floatingPassword" placeholder="암호를 입력하세요">
       <label for="floatingPassword">암호</label>
     </div>
-<!--     <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div> -->
     <button class="w-100 btn btn-lg btn-primary" type="submit">회원탈퇴</button>
-    <p class="mt-5 mb-3 text-muted">&copy; by Austin 2017–2022</p>
+    <p class="mt-5 mb-3 text-muted">&copy; by dongseon 2017–2022</p>
   </form>
   </div>
     <%@ include file="/_footer.jsp" %>
-  
+
 </body>
 </html>
